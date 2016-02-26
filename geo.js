@@ -11,7 +11,7 @@ function localizar()
 
 	if(navigator.vibrate)
 	{
-		navigator.vibrate(1000)
+		navigator.vibrate(10000)
 	}
 	else{
 		alert("tu jefa no vibra");
