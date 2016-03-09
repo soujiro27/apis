@@ -16,6 +16,9 @@ function localizar()
 	else{
 		alert("tu jefa no vibra");
 	}
+
+	$('section').append(localStorage["nombre"]);
+	$('button').on('click',guardar);
 }
 
 
@@ -23,9 +26,27 @@ function localizacion(parametros)
 {
 	var latitud=parametros.coords.latitude;
 	var longitud=parametros.coords.longitude;
-	$('div').html('<p>'+latitud+','+longitud+'</p>');	
+map = new google.maps.Map(document.getElementById('mapa'), {
+          center: {lat: latitud, lng: longitud},
+          zoom: 16
+        });
+	//$('div').html('<p>'+latitud+','+longitud+'</p>');	
 
 }
+
+
+
+
+function guardar()
+{
+
+	localStorage["nombre"]=$('input').val();
+	$('section').append(localStorage["nombre"]);
+}
+
+
+
+
 
 
 
